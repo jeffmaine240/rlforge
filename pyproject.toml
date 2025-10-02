@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Hostel Management"
+version = "0.1.0"
+description = "FastAPI project with CI/CD and pre-commit hooks"
+authors = [
+  { name = "Jeff Maine", email = "oyeniyij43@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+
+# -------------------------
+# Black (formatter)
+# -------------------------
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+skip-string-normalization = false
+
+# -------------------------
+# Ruff (linter + import sorter)
+# -------------------------
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+select = ["E", "F", "I"] # Errors, pyflakes, import sorting
+ignore = ["E501"]        # Ignore line length (since Black handles it)
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+
+# -------------------------
+# isort (if you want separate from Ruff)
+# -------------------------
+[tool.isort]
+profile = "black"
+line_length = 88
+
+# -------------------------
+# Pytest
+# -------------------------
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra -q"
+
+# -------------------------
+# Mypy (static type checker)
+# -------------------------
+[tool.mypy]
+python_version = "3.13"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+show_error_codes = true
+pretty = true
+
+# -------------------------
+# Bandit (security linter)
+# -------------------------
+[tool.bandit]
+skips = ["B101"] # Example: skip assert-used warning

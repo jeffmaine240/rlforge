@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Pytest / coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Pre-commit
+.pre-commit-config.yaml
+.pre-commit-hooks.yaml
+.pre-commit/
+
+# Mypy cache
+.mypy_cache/
+
+# SQLite (if used)
+*.db
+*.sqlite3
+
+# Redis dump (if used)
+dump.rdb

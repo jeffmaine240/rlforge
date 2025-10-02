@@ -1,0 +1,9 @@
+-r base.txt
+
+black
+ruff
+mypy
+pre-commit
+bandit
+safety
+rich

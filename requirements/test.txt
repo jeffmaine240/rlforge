@@ -1,0 +1,6 @@
+-r dev.txt
+
+pytest
+pytest-asyncio
+pytest-cov
+httpx
